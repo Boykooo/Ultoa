@@ -13,11 +13,11 @@ char digit_to_char(unsigned digit);
 int main()
 {
 	char buffer[40];
-	cout << "C++ " << _ultoa(159231324, buffer, 16);
+	cout << "C++ " << _ultoa(400, buffer, 55);
 
 	cout << "\n";
 	char buff[40] = {};
-	cout << "My " << ultoaRealization(159231324, buff, 16);
+	cout << "My " << ultoaRealization(400, buff, 55);
 
 	printf("\n");
 	system("pause");
@@ -50,11 +50,6 @@ char* ultoaRealization(unsigned long value, char* buffer, int radix) {
 
 char digit_to_char(unsigned digit)
 {
-	if (digit <= 9)
-		return '0' + digit;
-	else if (digit <= 36)
-		return 'a' + (digit - 10);
-
-	abort();
+	return (digit <= 9) ? '0' + digit : 'a' + (digit - 10);
 }
 
